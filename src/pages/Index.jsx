@@ -18,6 +18,46 @@ const Index = () => {
   return (
     <Container maxW="container.xl" height="100vh" display="flex" flexDirection="row" justifyContent="center" alignItems="center">
       <HStack spacing={8} width="100%">
+        <Box width="40%" padding={4} borderWidth={1} borderRadius="md">
+          <VStack spacing={4} align="start">
+            <Text fontSize="2xl">Summary</Text>
+            <Box>
+              <Text fontWeight="bold">iPhone Model:</Text>
+              <Text>{model || "Not selected"}</Text>
+              <Button size="sm" onClick={() => editStep(1)}>
+                Edit
+              </Button>
+            </Box>
+            <Box>
+              <Text fontWeight="bold">Issues:</Text>
+              <Text>{issues.length > 0 ? issues.join(", ") : "Not selected"}</Text>
+              <Button size="sm" onClick={() => editStep(2)}>
+                Edit
+              </Button>
+            </Box>
+            <Box>
+              <Text fontWeight="bold">Address:</Text>
+              <Text>{address || "Not provided"}</Text>
+              <Button size="sm" onClick={() => editStep(3)}>
+                Edit
+              </Button>
+            </Box>
+            <Box>
+              <Text fontWeight="bold">Time Slot:</Text>
+              <Text>{timeSlot || "Not selected"}</Text>
+              <Button size="sm" onClick={() => editStep(4)}>
+                Edit
+              </Button>
+            </Box>
+            <Box>
+              <Text fontWeight="bold">Payment Method:</Text>
+              <Text>{paymentMethod || "Not selected"}</Text>
+              <Button size="sm" onClick={() => editStep(5)}>
+                Edit
+              </Button>
+            </Box>
+          </VStack>
+        </Box>
         <Box width="60%">
           <Text fontSize="2xl">iPhone Repair Booking</Text>
           {step === 1 && (
